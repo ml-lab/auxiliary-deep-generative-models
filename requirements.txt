@@ -1,0 +1,6 @@
+theano
+lasagne
+numpy
+matplotlib
+seaborn
+https://github.com/casperkaae/parmesan

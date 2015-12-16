@@ -9,11 +9,13 @@ import theano.tensor as T
 from utils import env_paths as paths
 from collections import OrderedDict
 
+
 class Model(object):
     """
     The :class:'Model' class represents a model following the basic deep learning priciples.
     It should be subclassed when implementing new types of models.
     """
+
     def __init__(self, n_in, n_hidden, n_out, trans_func):
         """
         Initialisation of the basic architecture and programmatic settings of any model.
@@ -35,7 +37,6 @@ class Model(object):
         # Model state serialisation and logging variables.
         self.model_name = self.__class__.__name__
         self.root_path = None
-
 
     def get_root_path(self):
         """
@@ -82,18 +83,18 @@ class Model(object):
             self.sh_valid_x = theano.shared(np.asarray(validation_set[0], dtype=theano.config.floatX), borrow=True)
             self.sh_valid_t = theano.shared(np.asarray(validation_set[1], dtype=theano.config.floatX), borrow=True)
 
-    def dump_model(self,epoch=None):
+    def dump_model(self, epoch=None):
         """
         Dump the model into a pickled version in the model path formulated in the initialisation method.
         """
         p = paths.get_model_path(self.get_root_path(), self.model_name, self.n_in, self.n_hidden, self.n_out)
-        if not epoch is None: p += "_epoch_%i"%epoch
+        if not epoch is None: p += "_epoch_%i" % epoch
         if self.model_params is None:
-            raise("Model params are not set and can therefore not be pickled.")
+            raise ("Model params are not set and can therefore not be pickled.")
         model_params = [param.get_value() for param in self.model_params]
-        pkl.dump(model_params, open(p,"wb"), protocol=pkl.HIGHEST_PROTOCOL)
+        pkl.dump(model_params, open(p, "wb"), protocol=pkl.HIGHEST_PROTOCOL)
 
-    def load_model(self,id):
+    def load_model(self, id):
         """
         Load the pickled version of the model into a 'new' model instance.
         :param id: The model ID is constructed from the timestamp when the model was defined.
@@ -101,7 +102,7 @@ class Model(object):
         model_params = (self.model_name, self.n_in, self.n_hidden, self.n_out, id)
         root = paths.get_root_output_path(*model_params)
         p = paths.get_model_path(root, *model_params[:-1])
-        model_params = pkl.load(open(p,"rb"))
+        model_params = pkl.load(open(p, "rb"))
         for i in range(len(self.model_params)):
             self.model_params[i].set_value(np.asarray(model_params[i], dtype=theano.config.floatX), borrow=True)
 

@@ -1,4 +1,4 @@
-__author__ = 'larsma'
+__author__ = 'larsmaaloe'
 
 from lasagne.objectives import *
 

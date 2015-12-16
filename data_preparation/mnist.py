@@ -98,6 +98,32 @@ def _create_semi_supervised(xy, n_labeled, rng):
         y_unlabeled[i] = y[i]
     return np.hstack(x_labeled).T, np.hstack(y_labeled).T, np.hstack(x_unlabeled).T, np.hstack(y_unlabeled).T
 
+def load_supervised(filter_std=0.1, train_valid_combine=False):
+    """
+    Load the mnist dataset.
+    :param shared_variables: True if the data shall be embedded in a shared variable.
+    :return: The train, test and validation sets.
+    """
+    train_set, test_set, valid_set = _download()
+
+    if train_valid_combine:
+        train_set = np.append(train_set[0], valid_set[0], axis=0), np.append(train_set[1], valid_set[1], axis=0)
+
+    # Filter out the features with a low standard deviation.
+    if filter_std > .0:
+        train_x, train_t = train_set
+        idx_keep = np.std(train_x, axis=0) > filter_std
+        train_x = train_x[:, idx_keep]
+        valid_set = (valid_set[0][:, idx_keep], valid_set[1])
+        test_set = (test_set[0][:, idx_keep], test_set[1])
+        train_set = (train_x, train_t)
+
+    test_set = _pad_targets(test_set)
+    valid_set = _pad_targets(valid_set)
+    train_set = _pad_targets(train_set)
+
+    return train_set, test_set, valid_set
+
 def load_semi_supervised(n_batches=100, n_labeled=100, n_samples=100, filter_std=0.1, seed=123456, train_valid_combine=False):
     """
     Load the mnist dataset where only a fraction of data points are labeled. The amount
