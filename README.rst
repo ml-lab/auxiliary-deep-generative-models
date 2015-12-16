@@ -22,7 +22,11 @@ Please make sure you have installed the requirements before executing the python
   git clone https://github.com/casperkaae/parmesan.git
   cd parmesan
   python setup.py develop
-
+  pip install numpy
+  pip install seaborn
+  pip install matplotlib
+  pip install https://github.com/Theano/Theano/archive/master.zip
+  pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 
 
 Examples
