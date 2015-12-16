@@ -31,6 +31,8 @@ Please make sure you have installed the requirements before executing the python
 Examples
 -------------
 The repository primarily includes
+
+
 * script running a new model on the MNIST datasets with only 100 labels - *run_adgmssl_mnist.py*.
 * script evaluating a trained model (see model specifics in *output/.) - *run_adgmssl_evaluation.py*.
 * iPython notebook where all training is implemented in a single scipt - *run_adgmssl_mnist_notebook.ipynb*.
