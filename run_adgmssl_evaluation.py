@@ -26,7 +26,8 @@ def run_adgmssl_mnist():
                     z_hidden=[500, 500], xhat_hidden=[500, 500], y_hidden=[500, 500],
                     trans_func=rectify, x_dist='bernoulli')
 
-    model.load_model(20151209002003)  # Load trained model. See configurations in the log file.
+    model_id = 20151209002003  # Insert the trained model id here.
+    model.load_model(model_id)  # Load trained model. See configurations in the log file.
 
     # Evaluate the test error of the ADGM.
     mean_evals = model.get_output(test_x, 100)  # 100 MC to get a good estimate for the auxiliary unit.

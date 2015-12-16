@@ -1,0 +1,1112 @@
+### INITIAL TRAINING NOTES ###
+ Training the auxiliary deep generative model with 100 labels.
+### MODEL PARAMS ###
+model q(a|x): 784, 500, 500, 500, 100.
+model q(z|x,y): 784, 10, 500, 500, 500, 100.
+model p(x|z,y): 100, 10, 500, 500, 784.
+model q(y|a,x): 100, 784, 500, 500, 10.
+### TRAINING PARAMS ###
+Train -> batchsize;batchsize_labeled;beta;learningrate;beta1;beta2;samples: [200, 100, 1200.0, 0.0003, 0.9, 0.999, 10]
+Test -> samples: [1]
+Anneal LR 0.7500 after 200.
+### TRAINING MODEL ###
+[epoch,time,train[lb],test[err],valid[err]];1;41.15;231.0292;21.80%;21.49%
+[epoch,time,train[lb],test[err],valid[err]];2;44.97;147.7455;20.04%;19.33%
+[epoch,time,train[lb],test[err],valid[err]];3;45.01;138.2832;17.15%;16.94%
+[epoch,time,train[lb],test[err],valid[err]];4;44.81;133.7424;17.85%;16.70%
+[epoch,time,train[lb],test[err],valid[err]];5;44.35;131.0059;19.17%;18.71%
+[epoch,time,train[lb],test[err],valid[err]];6;44.39;129.1854;16.08%;15.78%
+[epoch,time,train[lb],test[err],valid[err]];7;44.36;127.7820;16.28%;15.44%
+[epoch,time,train[lb],test[err],valid[err]];8;43.91;126.5828;19.24%;18.25%
+[epoch,time,train[lb],test[err],valid[err]];9;43.85;125.7360;17.63%;16.08%
+[epoch,time,train[lb],test[err],valid[err]];10;43.80;124.7752;18.03%;16.76%
+test 100-samples: 17.27%.
+[epoch,time,train[lb],test[err],valid[err]];11;43.69;124.0894;13.81%;13.53%
+[epoch,time,train[lb],test[err],valid[err]];12;43.79;123.5028;16.10%;14.78%
+[epoch,time,train[lb],test[err],valid[err]];13;43.20;122.9422;15.47%;15.05%
+[epoch,time,train[lb],test[err],valid[err]];14;43.34;122.4974;12.52%;11.89%
+[epoch,time,train[lb],test[err],valid[err]];15;43.40;122.0885;15.59%;14.57%
+[epoch,time,train[lb],test[err],valid[err]];16;43.33;121.6718;15.59%;14.45%
+[epoch,time,train[lb],test[err],valid[err]];17;43.16;121.2763;14.96%;13.81%
+[epoch,time,train[lb],test[err],valid[err]];18;43.38;121.0172;17.88%;17.34%
+[epoch,time,train[lb],test[err],valid[err]];19;43.36;120.7303;16.81%;15.44%
+[epoch,time,train[lb],test[err],valid[err]];20;43.16;120.4189;15.18%;14.33%
+test 100-samples: 14.75%.
+[epoch,time,train[lb],test[err],valid[err]];21;43.14;120.1655;13.14%;12.08%
+[epoch,time,train[lb],test[err],valid[err]];22;43.41;119.9061;15.87%;15.23%
+[epoch,time,train[lb],test[err],valid[err]];23;43.00;119.6914;12.90%;11.96%
+[epoch,time,train[lb],test[err],valid[err]];24;43.38;119.4641;14.38%;13.35%
+[epoch,time,train[lb],test[err],valid[err]];25;43.13;119.2962;14.78%;13.55%
+[epoch,time,train[lb],test[err],valid[err]];26;43.39;119.1405;15.56%;14.40%
+[epoch,time,train[lb],test[err],valid[err]];27;43.07;118.9398;13.28%;12.22%
+[epoch,time,train[lb],test[err],valid[err]];28;43.41;118.7553;13.61%;12.06%
+[epoch,time,train[lb],test[err],valid[err]];29;42.96;118.5823;12.66%;11.95%
+[epoch,time,train[lb],test[err],valid[err]];30;43.35;118.4746;13.66%;12.17%
+test 100-samples: 12.69%.
+[epoch,time,train[lb],test[err],valid[err]];31;42.98;118.3047;13.88%;12.81%
+[epoch,time,train[lb],test[err],valid[err]];32;43.46;118.1760;16.08%;15.38%
+[epoch,time,train[lb],test[err],valid[err]];33;43.01;118.0344;11.95%;10.79%
+[epoch,time,train[lb],test[err],valid[err]];34;43.44;117.9336;17.51%;16.28%
+[epoch,time,train[lb],test[err],valid[err]];35;43.14;117.7516;15.85%;14.81%
+[epoch,time,train[lb],test[err],valid[err]];36;43.42;117.6619;17.80%;16.71%
+[epoch,time,train[lb],test[err],valid[err]];37;43.47;117.5450;13.00%;11.92%
+[epoch,time,train[lb],test[err],valid[err]];38;43.02;117.4344;13.63%;13.02%
+[epoch,time,train[lb],test[err],valid[err]];39;43.42;117.3665;12.75%;11.74%
+[epoch,time,train[lb],test[err],valid[err]];40;43.16;117.2257;14.12%;13.79%
+test 100-samples: 13.99%.
+[epoch,time,train[lb],test[err],valid[err]];41;43.16;117.1447;12.57%;11.45%
+[epoch,time,train[lb],test[err],valid[err]];42;43.34;117.0981;12.46%;11.71%
+[epoch,time,train[lb],test[err],valid[err]];43;43.02;116.8986;12.73%;11.94%
+[epoch,time,train[lb],test[err],valid[err]];44;43.41;116.7767;12.98%;12.37%
+[epoch,time,train[lb],test[err],valid[err]];45;43.00;116.7782;13.56%;13.16%
+[epoch,time,train[lb],test[err],valid[err]];46;43.07;116.6864;16.35%;16.10%
+[epoch,time,train[lb],test[err],valid[err]];47;43.04;116.5980;12.05%;10.80%
+[epoch,time,train[lb],test[err],valid[err]];48;43.04;116.5144;14.32%;13.84%
+[epoch,time,train[lb],test[err],valid[err]];49;42.99;116.4608;16.63%;16.10%
+[epoch,time,train[lb],test[err],valid[err]];50;42.98;116.3759;15.18%;14.89%
+test 100-samples: 14.60%.
+[epoch,time,train[lb],test[err],valid[err]];51;42.68;116.2652;14.53%;13.83%
+[epoch,time,train[lb],test[err],valid[err]];52;43.01;116.1919;11.68%;10.71%
+[epoch,time,train[lb],test[err],valid[err]];53;43.00;116.1533;11.77%;11.19%
+[epoch,time,train[lb],test[err],valid[err]];54;43.03;116.1179;12.95%;12.33%
+[epoch,time,train[lb],test[err],valid[err]];55;42.97;116.0193;9.97%;9.30%
+[epoch,time,train[lb],test[err],valid[err]];56;42.98;115.9690;12.96%;12.39%
+[epoch,time,train[lb],test[err],valid[err]];57;42.98;115.8479;13.61%;12.98%
+[epoch,time,train[lb],test[err],valid[err]];58;43.10;115.7803;13.85%;13.91%
+[epoch,time,train[lb],test[err],valid[err]];59;42.97;115.7230;13.82%;13.52%
+[epoch,time,train[lb],test[err],valid[err]];60;43.20;115.6840;13.87%;13.55%
+test 100-samples: 13.25%.
+[epoch,time,train[lb],test[err],valid[err]];61;43.06;115.6251;12.79%;12.77%
+[epoch,time,train[lb],test[err],valid[err]];62;43.36;115.5637;12.62%;12.22%
+[epoch,time,train[lb],test[err],valid[err]];63;43.34;115.5652;12.57%;12.11%
+[epoch,time,train[lb],test[err],valid[err]];64;43.36;115.4535;14.43%;13.61%
+[epoch,time,train[lb],test[err],valid[err]];65;43.37;115.3751;12.56%;11.59%
+[epoch,time,train[lb],test[err],valid[err]];66;43.32;115.4016;9.38%;8.88%
+[epoch,time,train[lb],test[err],valid[err]];67;43.32;115.3245;11.95%;11.70%
+[epoch,time,train[lb],test[err],valid[err]];68;43.56;115.2499;9.25%;8.83%
+[epoch,time,train[lb],test[err],valid[err]];69;43.38;115.1844;12.63%;12.21%
+[epoch,time,train[lb],test[err],valid[err]];70;43.39;115.1393;12.27%;12.06%
+test 100-samples: 11.86%.
+[epoch,time,train[lb],test[err],valid[err]];71;43.03;115.1377;9.73%;9.59%
+[epoch,time,train[lb],test[err],valid[err]];72;43.58;115.0367;10.53%;10.32%
+[epoch,time,train[lb],test[err],valid[err]];73;43.39;115.0289;9.66%;9.36%
+[epoch,time,train[lb],test[err],valid[err]];74;43.37;114.9489;10.78%;10.83%
+[epoch,time,train[lb],test[err],valid[err]];75;43.39;114.9200;9.52%;9.25%
+[epoch,time,train[lb],test[err],valid[err]];76;43.35;114.8582;8.27%;8.13%
+[epoch,time,train[lb],test[err],valid[err]];77;43.37;114.8485;8.24%;8.49%
+[epoch,time,train[lb],test[err],valid[err]];78;43.37;114.7834;8.40%;8.33%
+[epoch,time,train[lb],test[err],valid[err]];79;43.35;114.7448;9.08%;9.21%
+[epoch,time,train[lb],test[err],valid[err]];80;43.37;114.7030;8.35%;8.61%
+test 100-samples: 7.92%.
+[epoch,time,train[lb],test[err],valid[err]];81;42.93;114.6650;9.52%;9.28%
+[epoch,time,train[lb],test[err],valid[err]];82;43.42;114.6399;7.63%;7.23%
+[epoch,time,train[lb],test[err],valid[err]];83;43.22;114.5818;7.85%;7.27%
+[epoch,time,train[lb],test[err],valid[err]];84;43.29;114.5420;7.76%;7.25%
+[epoch,time,train[lb],test[err],valid[err]];85;43.33;114.4656;7.94%;7.79%
+[epoch,time,train[lb],test[err],valid[err]];86;43.30;114.5061;7.71%;7.23%
+[epoch,time,train[lb],test[err],valid[err]];87;43.30;114.4274;7.57%;7.01%
+[epoch,time,train[lb],test[err],valid[err]];88;43.33;114.4208;5.97%;5.39%
+[epoch,time,train[lb],test[err],valid[err]];89;43.33;114.3442;6.04%;5.59%
+[epoch,time,train[lb],test[err],valid[err]];90;43.33;114.3265;6.92%;7.29%
+test 100-samples: 6.63%.
+[epoch,time,train[lb],test[err],valid[err]];91;43.00;114.2340;6.01%;5.76%
+[epoch,time,train[lb],test[err],valid[err]];92;43.49;114.2185;6.55%;5.83%
+[epoch,time,train[lb],test[err],valid[err]];93;43.46;114.2085;6.95%;6.90%
+[epoch,time,train[lb],test[err],valid[err]];94;43.47;114.1391;7.69%;7.77%
+[epoch,time,train[lb],test[err],valid[err]];95;43.48;114.1373;6.41%;6.05%
+[epoch,time,train[lb],test[err],valid[err]];96;43.46;114.0936;6.04%;5.45%
+[epoch,time,train[lb],test[err],valid[err]];97;43.47;114.0756;5.47%;5.32%
+[epoch,time,train[lb],test[err],valid[err]];98;43.55;114.0402;5.57%;5.25%
+[epoch,time,train[lb],test[err],valid[err]];99;43.85;114.0288;6.04%;5.59%
+[epoch,time,train[lb],test[err],valid[err]];100;43.53;113.9986;5.73%;5.50%
+test 100-samples: 5.44%.
+[epoch,time,train[lb],test[err],valid[err]];101;43.13;113.9314;5.80%;5.31%
+[epoch,time,train[lb],test[err],valid[err]];102;43.72;113.9642;7.08%;7.04%
+[epoch,time,train[lb],test[err],valid[err]];103;43.06;113.9230;6.30%;5.99%
+[epoch,time,train[lb],test[err],valid[err]];104;43.65;113.8234;6.79%;6.61%
+[epoch,time,train[lb],test[err],valid[err]];105;43.41;113.8320;6.31%;6.02%
+[epoch,time,train[lb],test[err],valid[err]];106;43.36;113.8017;6.21%;5.88%
+[epoch,time,train[lb],test[err],valid[err]];107;43.38;113.7845;4.64%;4.37%
+[epoch,time,train[lb],test[err],valid[err]];108;43.40;113.7356;5.96%;5.70%
+[epoch,time,train[lb],test[err],valid[err]];109;43.40;113.6967;4.45%;3.70%
+[epoch,time,train[lb],test[err],valid[err]];110;43.37;113.6740;5.80%;5.51%
+test 100-samples: 5.62%.
+[epoch,time,train[lb],test[err],valid[err]];111;43.40;113.6612;4.87%;4.41%
+[epoch,time,train[lb],test[err],valid[err]];112;43.42;113.6652;4.99%;4.48%
+[epoch,time,train[lb],test[err],valid[err]];113;43.40;113.6046;4.67%;3.75%
+[epoch,time,train[lb],test[err],valid[err]];114;43.56;113.6297;4.86%;4.14%
+[epoch,time,train[lb],test[err],valid[err]];115;43.67;113.5545;4.54%;4.15%
+[epoch,time,train[lb],test[err],valid[err]];116;43.39;113.5166;5.25%;4.68%
+[epoch,time,train[lb],test[err],valid[err]];117;43.50;113.5082;4.35%;3.60%
+[epoch,time,train[lb],test[err],valid[err]];118;43.58;113.5330;3.79%;3.26%
+[epoch,time,train[lb],test[err],valid[err]];119;43.41;113.4720;4.10%;3.34%
+[epoch,time,train[lb],test[err],valid[err]];120;43.39;113.4697;4.35%;3.63%
+test 100-samples: 4.25%.
+[epoch,time,train[lb],test[err],valid[err]];121;43.18;113.4890;4.25%;3.90%
+[epoch,time,train[lb],test[err],valid[err]];122;43.36;113.3822;3.98%;3.30%
+[epoch,time,train[lb],test[err],valid[err]];123;43.34;113.3780;3.46%;2.78%
+[epoch,time,train[lb],test[err],valid[err]];124;43.37;113.3310;3.47%;2.62%
+[epoch,time,train[lb],test[err],valid[err]];125;43.33;113.3587;3.88%;2.85%
+[epoch,time,train[lb],test[err],valid[err]];126;43.36;113.2937;3.43%;2.52%
+[epoch,time,train[lb],test[err],valid[err]];127;43.38;113.2677;3.48%;2.47%
+[epoch,time,train[lb],test[err],valid[err]];128;43.34;113.2341;3.71%;3.16%
+[epoch,time,train[lb],test[err],valid[err]];129;43.37;113.2797;3.86%;3.46%
+[epoch,time,train[lb],test[err],valid[err]];130;43.36;113.2959;3.73%;2.63%
+test 100-samples: 3.49%.
+[epoch,time,train[lb],test[err],valid[err]];131;43.18;113.1713;3.20%;2.38%
+[epoch,time,train[lb],test[err],valid[err]];132;43.32;113.1834;3.33%;2.40%
+[epoch,time,train[lb],test[err],valid[err]];133;43.36;113.1346;4.37%;3.50%
+[epoch,time,train[lb],test[err],valid[err]];134;43.39;113.1330;3.47%;3.07%
+[epoch,time,train[lb],test[err],valid[err]];135;43.33;113.0936;3.06%;2.30%
+[epoch,time,train[lb],test[err],valid[err]];136;43.37;113.0718;3.03%;2.14%
+[epoch,time,train[lb],test[err],valid[err]];137;43.39;113.0711;3.30%;2.42%
+[epoch,time,train[lb],test[err],valid[err]];138;43.35;113.0712;3.27%;2.44%
+[epoch,time,train[lb],test[err],valid[err]];139;43.34;113.0053;2.93%;2.19%
+[epoch,time,train[lb],test[err],valid[err]];140;43.34;113.0224;3.48%;2.59%
+test 100-samples: 3.34%.
+[epoch,time,train[lb],test[err],valid[err]];141;43.43;112.9911;2.99%;2.27%
+[epoch,time,train[lb],test[err],valid[err]];142;43.43;112.9907;2.96%;1.90%
+[epoch,time,train[lb],test[err],valid[err]];143;43.42;112.9697;2.82%;1.51%
+[epoch,time,train[lb],test[err],valid[err]];144;43.38;112.8952;2.85%;1.80%
+[epoch,time,train[lb],test[err],valid[err]];145;43.61;112.9301;3.17%;2.03%
+[epoch,time,train[lb],test[err],valid[err]];146;43.53;112.8682;3.46%;2.51%
+[epoch,time,train[lb],test[err],valid[err]];147;43.43;112.8970;2.70%;1.50%
+[epoch,time,train[lb],test[err],valid[err]];148;43.74;112.8444;2.99%;1.82%
+[epoch,time,train[lb],test[err],valid[err]];149;43.69;112.8242;2.92%;1.59%
+[epoch,time,train[lb],test[err],valid[err]];150;43.44;112.7908;2.74%;1.65%
+test 100-samples: 2.74%.
+[epoch,time,train[lb],test[err],valid[err]];151;43.62;112.8014;2.59%;1.68%
+[epoch,time,train[lb],test[err],valid[err]];152;43.83;112.8002;2.60%;1.48%
+[epoch,time,train[lb],test[err],valid[err]];153;43.82;112.7988;2.61%;1.63%
+[epoch,time,train[lb],test[err],valid[err]];154;43.84;112.7551;2.87%;1.62%
+[epoch,time,train[lb],test[err],valid[err]];155;43.82;112.7654;2.49%;1.33%
+[epoch,time,train[lb],test[err],valid[err]];156;43.84;112.7035;2.49%;1.36%
+[epoch,time,train[lb],test[err],valid[err]];157;43.83;112.7107;2.69%;1.60%
+[epoch,time,train[lb],test[err],valid[err]];158;43.84;112.6860;2.56%;1.29%
+[epoch,time,train[lb],test[err],valid[err]];159;43.82;112.6631;2.89%;1.58%
+[epoch,time,train[lb],test[err],valid[err]];160;43.87;112.6747;2.80%;1.74%
+test 100-samples: 2.76%.
+[epoch,time,train[lb],test[err],valid[err]];161;43.57;112.7008;2.31%;1.16%
+[epoch,time,train[lb],test[err],valid[err]];162;43.81;112.5876;2.59%;1.23%
+[epoch,time,train[lb],test[err],valid[err]];163;43.64;112.6219;2.26%;1.14%
+[epoch,time,train[lb],test[err],valid[err]];164;43.80;112.5830;3.17%;2.04%
+[epoch,time,train[lb],test[err],valid[err]];165;43.61;112.6045;2.44%;1.41%
+[epoch,time,train[lb],test[err],valid[err]];166;43.78;112.5780;2.19%;0.92%
+[epoch,time,train[lb],test[err],valid[err]];167;43.60;112.5552;2.39%;1.22%
+[epoch,time,train[lb],test[err],valid[err]];168;43.62;112.5591;2.56%;1.35%
+[epoch,time,train[lb],test[err],valid[err]];169;43.44;112.4773;2.55%;1.31%
+[epoch,time,train[lb],test[err],valid[err]];170;43.43;112.5303;2.23%;1.34%
+test 100-samples: 2.25%.
+[epoch,time,train[lb],test[err],valid[err]];171;43.23;112.5422;2.56%;1.27%
+[epoch,time,train[lb],test[err],valid[err]];172;43.56;112.5042;2.34%;0.98%
+[epoch,time,train[lb],test[err],valid[err]];173;43.55;112.4547;2.58%;1.25%
+[epoch,time,train[lb],test[err],valid[err]];174;43.51;112.4299;2.17%;0.77%
+[epoch,time,train[lb],test[err],valid[err]];175;43.47;112.4383;2.19%;0.80%
+[epoch,time,train[lb],test[err],valid[err]];176;43.50;112.4096;2.32%;0.88%
+[epoch,time,train[lb],test[err],valid[err]];177;43.46;112.4258;2.30%;1.09%
+[epoch,time,train[lb],test[err],valid[err]];178;43.47;112.3923;2.53%;1.50%
+[epoch,time,train[lb],test[err],valid[err]];179;43.48;112.3868;2.46%;1.27%
+[epoch,time,train[lb],test[err],valid[err]];180;43.46;112.3477;2.35%;1.08%
+test 100-samples: 2.25%.
+[epoch,time,train[lb],test[err],valid[err]];181;43.09;112.3454;2.17%;0.84%
+[epoch,time,train[lb],test[err],valid[err]];182;43.62;112.3707;2.39%;1.04%
+[epoch,time,train[lb],test[err],valid[err]];183;43.45;112.2915;2.34%;1.00%
+[epoch,time,train[lb],test[err],valid[err]];184;43.46;112.2773;2.59%;1.14%
+[epoch,time,train[lb],test[err],valid[err]];185;43.45;112.3092;2.49%;1.08%
+[epoch,time,train[lb],test[err],valid[err]];186;43.44;112.2559;2.38%;0.89%
+[epoch,time,train[lb],test[err],valid[err]];187;43.48;112.2628;2.36%;0.76%
+[epoch,time,train[lb],test[err],valid[err]];188;43.49;112.2578;2.07%;0.83%
+[epoch,time,train[lb],test[err],valid[err]];189;43.42;112.2255;2.19%;0.92%
+[epoch,time,train[lb],test[err],valid[err]];190;43.50;112.2043;2.11%;0.91%
+test 100-samples: 2.10%.
+[epoch,time,train[lb],test[err],valid[err]];191;43.42;112.2221;2.24%;0.98%
+[epoch,time,train[lb],test[err],valid[err]];192;43.64;112.2348;2.33%;0.95%
+[epoch,time,train[lb],test[err],valid[err]];193;43.42;112.1965;1.96%;0.65%
+[epoch,time,train[lb],test[err],valid[err]];194;43.44;112.1537;2.21%;1.14%
+[epoch,time,train[lb],test[err],valid[err]];195;43.39;112.1600;2.37%;0.90%
+[epoch,time,train[lb],test[err],valid[err]];196;43.45;112.1771;2.04%;0.70%
+[epoch,time,train[lb],test[err],valid[err]];197;43.61;112.1541;2.20%;0.80%
+[epoch,time,train[lb],test[err],valid[err]];198;43.46;112.1636;2.35%;1.08%
+[epoch,time,train[lb],test[err],valid[err]];199;43.45;112.1200;2.24%;0.82%
+[epoch,time,train[lb],test[err],valid[err]];200;43.45;112.0051;1.61%;0.53%
+test 100-samples: 1.59%.
+[epoch,time,train[lb],test[err],valid[err]];201;43.18;111.9918;1.86%;0.48%
+[epoch,time,train[lb],test[err],valid[err]];202;43.66;111.9252;1.81%;0.47%
+[epoch,time,train[lb],test[err],valid[err]];203;43.43;111.9068;1.85%;0.50%
+[epoch,time,train[lb],test[err],valid[err]];204;43.46;111.9227;1.82%;0.49%
+[epoch,time,train[lb],test[err],valid[err]];205;43.43;111.8892;1.75%;0.32%
+[epoch,time,train[lb],test[err],valid[err]];206;43.59;111.8608;1.92%;0.54%
+[epoch,time,train[lb],test[err],valid[err]];207;43.64;111.8503;1.79%;0.40%
+[epoch,time,train[lb],test[err],valid[err]];208;43.57;111.8720;1.80%;0.36%
+[epoch,time,train[lb],test[err],valid[err]];209;43.85;111.8407;1.71%;0.24%
+[epoch,time,train[lb],test[err],valid[err]];210;43.54;111.8136;1.70%;0.35%
+test 100-samples: 1.78%.
+[epoch,time,train[lb],test[err],valid[err]];211;43.69;111.8068;1.78%;0.23%
+[epoch,time,train[lb],test[err],valid[err]];212;43.82;111.8043;1.79%;0.46%
+[epoch,time,train[lb],test[err],valid[err]];213;43.82;111.7903;1.49%;0.21%
+[epoch,time,train[lb],test[err],valid[err]];214;43.83;111.7991;1.75%;0.20%
+[epoch,time,train[lb],test[err],valid[err]];215;43.81;111.7731;1.83%;0.37%
+[epoch,time,train[lb],test[err],valid[err]];216;43.85;111.7741;1.78%;0.43%
+[epoch,time,train[lb],test[err],valid[err]];217;43.83;111.7542;1.54%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];218;43.81;111.7267;1.69%;0.35%
+[epoch,time,train[lb],test[err],valid[err]];219;43.82;111.7195;1.67%;0.31%
+[epoch,time,train[lb],test[err],valid[err]];220;43.82;111.7071;1.58%;0.16%
+test 100-samples: 1.58%.
+[epoch,time,train[lb],test[err],valid[err]];221;43.69;111.7017;1.62%;0.29%
+[epoch,time,train[lb],test[err],valid[err]];222;44.12;111.7560;1.83%;0.30%
+[epoch,time,train[lb],test[err],valid[err]];223;43.64;111.6793;1.62%;0.23%
+[epoch,time,train[lb],test[err],valid[err]];224;43.60;111.7109;1.58%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];225;43.60;111.6386;1.56%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];226;43.73;111.6490;1.64%;0.21%
+[epoch,time,train[lb],test[err],valid[err]];227;43.47;111.6571;1.66%;0.23%
+[epoch,time,train[lb],test[err],valid[err]];228;43.61;111.6317;1.69%;0.23%
+[epoch,time,train[lb],test[err],valid[err]];229;43.49;111.6478;1.59%;0.22%
+[epoch,time,train[lb],test[err],valid[err]];230;43.50;111.6265;1.68%;0.25%
+test 100-samples: 1.69%.
+[epoch,time,train[lb],test[err],valid[err]];231;43.17;111.6323;1.64%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];232;43.54;111.6343;1.61%;0.24%
+[epoch,time,train[lb],test[err],valid[err]];233;43.45;111.6100;1.59%;0.17%
+[epoch,time,train[lb],test[err],valid[err]];234;43.49;111.5842;1.71%;0.24%
+[epoch,time,train[lb],test[err],valid[err]];235;43.42;111.5635;1.60%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];236;43.43;111.5582;1.78%;0.27%
+[epoch,time,train[lb],test[err],valid[err]];237;43.43;111.6037;1.59%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];238;43.45;111.5399;1.57%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];239;43.46;111.5785;1.63%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];240;43.45;111.5300;1.74%;0.28%
+test 100-samples: 1.66%.
+[epoch,time,train[lb],test[err],valid[err]];241;43.18;111.5310;1.65%;0.31%
+[epoch,time,train[lb],test[err],valid[err]];242;43.57;111.5069;1.53%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];243;43.42;111.4866;1.65%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];244;43.43;111.5143;1.80%;0.19%
+[epoch,time,train[lb],test[err],valid[err]];245;43.64;111.5158;1.56%;0.17%
+[epoch,time,train[lb],test[err],valid[err]];246;43.73;111.4889;1.59%;0.19%
+[epoch,time,train[lb],test[err],valid[err]];247;43.74;111.4864;1.57%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];248;43.62;111.4845;1.41%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];249;43.85;111.4635;1.68%;0.14%
+[epoch,time,train[lb],test[err],valid[err]];250;43.86;111.4596;1.56%;0.05%
+test 100-samples: 1.56%.
+[epoch,time,train[lb],test[err],valid[err]];251;43.66;111.4428;1.57%;0.19%
+[epoch,time,train[lb],test[err],valid[err]];252;44.02;111.4704;1.56%;0.14%
+[epoch,time,train[lb],test[err],valid[err]];253;43.89;111.4384;1.69%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];254;43.86;111.3777;1.60%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];255;43.89;111.4312;1.53%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];256;43.86;111.4246;1.66%;0.22%
+[epoch,time,train[lb],test[err],valid[err]];257;43.89;111.4048;1.47%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];258;43.85;111.4029;1.62%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];259;43.84;111.3826;1.64%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];260;43.82;111.3622;1.59%;0.12%
+test 100-samples: 1.53%.
+[epoch,time,train[lb],test[err],valid[err]];261;43.57;111.3292;1.55%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];262;43.83;111.4310;1.68%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];263;43.83;111.3657;1.56%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];264;43.85;111.3673;1.61%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];265;43.85;111.3232;1.59%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];266;43.83;111.3252;1.57%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];267;43.82;111.3722;1.60%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];268;43.68;111.3015;1.63%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];269;43.75;111.3185;1.68%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];270;43.80;111.2999;1.51%;0.09%
+test 100-samples: 1.47%.
+[epoch,time,train[lb],test[err],valid[err]];271;43.22;111.2921;1.51%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];272;43.84;111.2584;1.63%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];273;43.56;111.2699;1.66%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];274;43.74;111.2553;1.64%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];275;43.71;111.2888;1.53%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];276;43.57;111.2282;1.42%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];277;43.86;111.2414;1.44%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];278;43.49;111.2395;1.56%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];279;43.59;111.2320;1.52%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];280;43.76;111.2094;1.68%;0.07%
+test 100-samples: 1.58%.
+[epoch,time,train[lb],test[err],valid[err]];281;43.33;111.2232;1.49%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];282;43.77;111.1965;1.81%;0.14%
+[epoch,time,train[lb],test[err],valid[err]];283;43.59;111.2179;1.68%;0.22%
+[epoch,time,train[lb],test[err],valid[err]];284;43.61;111.1793;1.59%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];285;43.46;111.1588;1.63%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];286;43.73;111.1732;1.78%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];287;43.60;111.1673;1.62%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];288;43.70;111.1544;1.56%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];289;43.49;111.1653;1.73%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];290;43.80;111.1480;1.66%;0.09%
+test 100-samples: 1.62%.
+[epoch,time,train[lb],test[err],valid[err]];291;43.24;111.1607;1.71%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];292;43.84;111.1366;1.64%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];293;43.57;111.1038;1.79%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];294;43.82;111.1245;1.71%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];295;43.49;111.1114;1.57%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];296;43.62;111.1200;1.53%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];297;43.64;111.1192;1.52%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];298;43.51;111.1220;1.54%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];299;43.46;111.0967;1.55%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];300;43.60;111.1211;1.68%;0.12%
+test 100-samples: 1.60%.
+[epoch,time,train[lb],test[err],valid[err]];301;43.01;111.1034;1.46%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];302;43.46;111.0887;1.62%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];303;43.46;111.0514;1.47%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];304;43.45;111.0674;1.55%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];305;43.44;111.0405;1.61%;0.23%
+[epoch,time,train[lb],test[err],valid[err]];306;43.40;111.0473;1.61%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];307;43.41;111.0725;1.58%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];308;43.45;111.0129;1.57%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];309;43.40;111.0526;1.54%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];310;43.35;111.0310;1.78%;0.17%
+test 100-samples: 1.61%.
+[epoch,time,train[lb],test[err],valid[err]];311;43.44;111.0276;1.46%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];312;43.17;111.0282;1.61%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];313;43.35;111.0380;1.65%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];314;43.41;110.9671;1.70%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];315;43.36;111.0120;1.60%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];316;43.36;110.9734;1.79%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];317;43.37;110.9502;1.49%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];318;43.40;110.9794;1.57%;0.13%
+[epoch,time,train[lb],test[err],valid[err]];319;43.37;110.9382;1.59%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];320;43.39;110.9509;1.60%;0.10%
+test 100-samples: 1.65%.
+[epoch,time,train[lb],test[err],valid[err]];321;43.38;110.9859;1.57%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];322;43.09;110.9569;1.54%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];323;43.23;110.9459;1.46%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];324;43.36;110.9256;1.59%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];325;43.34;110.9574;1.53%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];326;43.38;110.9135;1.48%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];327;43.37;110.8982;1.44%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];328;43.39;110.9086;1.55%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];329;43.38;110.9394;1.53%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];330;43.42;110.9150;1.57%;0.08%
+test 100-samples: 1.56%.
+[epoch,time,train[lb],test[err],valid[err]];331;43.05;110.8782;1.55%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];332;43.42;110.8859;1.63%;0.11%
+[epoch,time,train[lb],test[err],valid[err]];333;43.41;110.8802;1.63%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];334;43.40;110.8619;1.48%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];335;43.38;110.8675;1.59%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];336;43.36;110.8382;1.71%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];337;43.39;110.8600;1.65%;0.15%
+[epoch,time,train[lb],test[err],valid[err]];338;43.33;110.8480;1.45%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];339;43.38;110.8525;1.41%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];340;43.38;110.8146;1.32%;0.06%
+test 100-samples: 1.23%.
+[epoch,time,train[lb],test[err],valid[err]];341;43.07;110.8195;1.46%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];342;43.39;110.8377;1.53%;0.14%
+[epoch,time,train[lb],test[err],valid[err]];343;43.37;110.8351;1.67%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];344;43.37;110.8032;1.57%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];345;43.37;110.8220;1.47%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];346;43.35;110.8229;1.59%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];347;43.40;110.7871;1.48%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];348;43.36;110.8218;1.61%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];349;43.36;110.7999;1.58%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];350;43.39;110.7778;1.64%;0.18%
+test 100-samples: 1.49%.
+[epoch,time,train[lb],test[err],valid[err]];351;42.99;110.7541;1.65%;0.17%
+[epoch,time,train[lb],test[err],valid[err]];352;43.41;110.7751;1.49%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];353;43.39;110.7390;1.47%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];354;43.39;110.7568;1.48%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];355;43.38;110.7733;1.79%;0.20%
+[epoch,time,train[lb],test[err],valid[err]];356;43.40;110.7780;1.55%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];357;43.37;110.7429;1.71%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];358;43.39;110.7696;1.55%;0.09%
+[epoch,time,train[lb],test[err],valid[err]];359;43.35;110.7631;1.52%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];360;43.40;110.7026;1.55%;0.07%
+test 100-samples: 1.50%.
+[epoch,time,train[lb],test[err],valid[err]];361;43.20;110.7528;1.48%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];362;43.50;110.7053;1.43%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];363;43.42;110.6911;1.50%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];364;43.38;110.6875;1.58%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];365;43.40;110.7124;1.44%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];366;43.39;110.6979;1.54%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];367;43.43;110.6301;1.51%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];368;43.44;110.6963;1.59%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];369;43.43;110.6672;1.52%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];370;43.41;110.6718;1.64%;0.13%
+test 100-samples: 1.58%.
+[epoch,time,train[lb],test[err],valid[err]];371;43.18;110.6537;1.54%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];372;43.41;110.6628;1.48%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];373;43.43;110.6469;1.55%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];374;43.45;110.6484;1.57%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];375;43.48;110.6821;1.62%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];376;43.45;110.6362;1.53%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];377;43.45;110.6663;1.47%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];378;43.46;110.6335;1.52%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];379;43.42;110.6389;1.43%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];380;43.41;110.6197;1.63%;0.08%
+test 100-samples: 1.61%.
+[epoch,time,train[lb],test[err],valid[err]];381;43.13;110.6188;1.66%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];382;43.47;110.6175;1.38%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];383;43.50;110.6127;1.55%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];384;43.43;110.6045;1.67%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];385;43.43;110.6005;1.53%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];386;43.47;110.5890;1.45%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];387;43.41;110.5887;1.49%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];388;43.43;110.5862;1.38%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];389;43.45;110.5727;1.53%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];390;43.47;110.5526;1.48%;0.07%
+test 100-samples: 1.39%.
+[epoch,time,train[lb],test[err],valid[err]];391;43.04;110.5660;1.53%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];392;43.47;110.5847;1.46%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];393;43.03;110.5580;1.59%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];394;43.56;110.5623;1.47%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];395;43.44;110.5211;1.52%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];396;43.43;110.5143;1.46%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];397;43.44;110.5354;1.66%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];398;43.44;110.5333;1.64%;0.12%
+[epoch,time,train[lb],test[err],valid[err]];399;43.48;110.5165;1.70%;0.10%
+[epoch,time,train[lb],test[err],valid[err]];400;43.61;110.4002;1.38%;0.03%
+test 100-samples: 1.33%.
+[epoch,time,train[lb],test[err],valid[err]];401;43.52;110.4377;1.24%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];402;43.45;110.3686;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];403;43.59;110.3774;1.33%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];404;43.83;110.3374;1.47%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];405;43.47;110.3797;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];406;43.81;110.3394;1.46%;0.08%
+[epoch,time,train[lb],test[err],valid[err]];407;43.52;110.3425;1.40%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];408;43.85;110.3621;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];409;43.83;110.3267;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];410;43.58;110.3246;1.45%;0.02%
+test 100-samples: 1.36%.
+[epoch,time,train[lb],test[err],valid[err]];411;43.52;110.3256;1.37%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];412;43.94;110.3119;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];413;43.62;110.3307;1.33%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];414;43.85;110.3319;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];415;43.58;110.3228;1.45%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];416;43.60;110.3196;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];417;43.77;110.2867;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];418;43.45;110.3031;1.45%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];419;43.44;110.3121;1.49%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];420;43.44;110.3319;1.31%;0.06%
+test 100-samples: 1.39%.
+[epoch,time,train[lb],test[err],valid[err]];421;43.13;110.2953;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];422;43.44;110.2985;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];423;43.44;110.2737;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];424;43.42;110.2983;1.35%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];425;43.44;110.2437;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];426;43.45;110.2590;1.38%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];427;43.46;110.2831;1.39%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];428;43.40;110.2421;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];429;43.40;110.2400;1.34%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];430;43.45;110.2774;1.44%;0.02%
+test 100-samples: 1.40%.
+[epoch,time,train[lb],test[err],valid[err]];431;43.12;110.2556;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];432;43.36;110.2540;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];433;43.31;110.2585;1.41%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];434;43.36;110.2572;1.36%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];435;43.37;110.2381;1.43%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];436;43.35;110.1853;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];437;43.36;110.2005;1.48%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];438;43.33;110.2053;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];439;43.38;110.2143;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];440;43.37;110.2116;1.30%;0.03%
+test 100-samples: 1.30%.
+[epoch,time,train[lb],test[err],valid[err]];441;43.44;110.2287;1.39%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];442;43.61;110.2033;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];443;43.41;110.1853;1.47%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];444;43.71;110.1657;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];445;43.67;110.2134;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];446;43.57;110.2098;1.32%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];447;43.80;110.1884;1.37%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];448;43.79;110.1847;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];449;43.81;110.1898;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];450;43.77;110.2070;1.41%;0.03%
+test 100-samples: 1.33%.
+[epoch,time,train[lb],test[err],valid[err]];451;43.57;110.1452;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];452;44.11;110.1548;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];453;43.51;110.1556;1.43%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];454;43.81;110.1520;1.37%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];455;43.83;110.1711;1.44%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];456;43.69;110.1276;1.41%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];457;43.81;110.1227;1.38%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];458;43.83;110.1431;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];459;43.84;110.1359;1.38%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];460;43.84;110.1499;1.55%;0.03%
+test 100-samples: 1.46%.
+[epoch,time,train[lb],test[err],valid[err]];461;43.29;110.1237;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];462;43.83;110.1353;1.48%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];463;43.47;110.1277;1.40%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];464;43.52;110.1642;1.27%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];465;43.74;110.1162;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];466;43.18;110.1214;1.49%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];467;43.79;110.0892;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];468;43.45;110.1186;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];469;43.55;110.1010;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];470;43.66;110.0981;1.45%;0.02%
+test 100-samples: 1.43%.
+[epoch,time,train[lb],test[err],valid[err]];471;43.26;110.1051;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];472;43.75;110.0886;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];473;43.48;110.0998;1.43%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];474;43.41;110.0807;1.43%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];475;43.44;110.1012;1.41%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];476;43.40;110.0739;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];477;43.43;110.0500;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];478;43.42;110.0779;1.43%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];479;43.41;110.0616;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];480;43.43;110.0844;1.28%;0.02%
+test 100-samples: 1.26%.
+[epoch,time,train[lb],test[err],valid[err]];481;43.09;110.0290;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];482;43.62;110.0296;1.48%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];483;43.42;110.0540;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];484;43.45;110.0764;1.39%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];485;43.46;110.0269;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];486;43.41;110.0674;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];487;43.42;110.0173;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];488;43.47;110.0477;1.31%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];489;43.44;110.0225;1.44%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];490;43.46;110.0159;1.27%;0.02%
+test 100-samples: 1.23%.
+[epoch,time,train[lb],test[err],valid[err]];491;43.21;110.0117;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];492;43.46;110.0298;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];493;43.42;110.0340;1.46%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];494;43.47;110.0482;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];495;43.45;110.0205;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];496;43.47;110.0056;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];497;43.41;110.0168;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];498;43.46;110.0138;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];499;43.44;109.9761;1.32%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];500;43.45;110.0313;1.27%;0.02%
+test 100-samples: 1.24%.
+[epoch,time,train[lb],test[err],valid[err]];501;43.04;110.0121;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];502;43.61;109.9971;1.36%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];503;43.48;109.9978;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];504;43.71;109.9939;1.24%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];505;43.49;109.9810;1.27%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];506;43.80;110.0055;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];507;43.46;109.9851;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];508;43.81;110.0147;1.28%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];509;43.84;110.0253;1.30%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];510;43.82;109.9685;1.32%;0.02%
+test 100-samples: 1.29%.
+[epoch,time,train[lb],test[err],valid[err]];511;43.42;109.9600;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];512;43.83;109.9967;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];513;43.78;109.9624;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];514;43.82;109.9805;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];515;43.82;109.9265;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];516;43.79;109.9788;1.37%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];517;43.82;109.9379;1.50%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];518;43.76;109.9755;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];519;43.81;109.9276;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];520;43.59;109.9244;1.47%;0.02%
+test 100-samples: 1.37%.
+[epoch,time,train[lb],test[err],valid[err]];521;43.36;109.9672;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];522;43.79;109.9252;1.44%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];523;43.57;109.9512;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];524;43.43;109.9228;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];525;43.42;109.9505;1.58%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];526;43.55;109.9520;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];527;43.38;109.9387;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];528;43.39;109.9173;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];529;43.43;109.9105;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];530;43.39;109.9219;1.32%;0.02%
+test 100-samples: 1.26%.
+[epoch,time,train[lb],test[err],valid[err]];531;43.15;109.9311;1.26%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];532;43.47;109.9124;1.49%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];533;43.43;109.8864;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];534;43.43;109.9265;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];535;43.42;109.9154;1.31%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];536;43.43;109.9003;1.40%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];537;43.45;109.9016;1.37%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];538;43.42;109.8942;1.47%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];539;43.42;109.9074;1.34%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];540;43.53;109.8937;1.40%;0.04%
+test 100-samples: 1.28%.
+[epoch,time,train[lb],test[err],valid[err]];541;43.28;109.8690;1.46%;0.07%
+[epoch,time,train[lb],test[err],valid[err]];542;43.43;109.8950;1.33%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];543;43.65;109.9289;1.44%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];544;43.55;109.8694;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];545;43.61;109.8732;1.46%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];546;43.72;109.8839;1.36%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];547;43.56;109.8904;1.44%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];548;43.79;109.8405;1.42%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];549;43.55;109.8800;1.45%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];550;43.81;109.8709;1.47%;0.03%
+test 100-samples: 1.38%.
+[epoch,time,train[lb],test[err],valid[err]];551;43.26;109.8714;1.35%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];552;43.75;109.8443;1.47%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];553;43.77;109.8663;1.40%;0.06%
+[epoch,time,train[lb],test[err],valid[err]];554;43.79;109.8757;1.43%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];555;43.79;109.8987;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];556;43.81;109.8623;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];557;43.77;109.8755;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];558;43.78;109.8456;1.31%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];559;43.66;109.8765;1.45%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];560;43.71;109.8803;1.29%;0.03%
+test 100-samples: 1.32%.
+[epoch,time,train[lb],test[err],valid[err]];561;43.28;109.8322;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];562;43.69;109.8197;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];563;43.42;109.8301;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];564;43.65;109.8618;1.52%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];565;43.47;109.8423;1.47%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];566;43.40;109.8149;1.38%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];567;43.45;109.8463;1.46%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];568;43.41;109.8220;1.44%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];569;43.47;109.7921;1.32%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];570;43.43;109.8327;1.33%;0.02%
+test 100-samples: 1.31%.
+[epoch,time,train[lb],test[err],valid[err]];571;43.36;109.8306;1.40%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];572;43.41;109.8295;1.37%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];573;43.44;109.7942;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];574;43.42;109.8267;1.46%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];575;43.44;109.8575;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];576;43.46;109.8101;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];577;43.41;109.8063;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];578;43.46;109.7869;1.39%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];579;43.44;109.7769;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];580;43.48;109.8042;1.40%;0.02%
+test 100-samples: 1.33%.
+[epoch,time,train[lb],test[err],valid[err]];581;43.12;109.7852;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];582;43.65;109.7433;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];583;43.43;109.7668;1.46%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];584;43.46;109.7716;1.42%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];585;43.45;109.7888;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];586;43.43;109.7518;1.45%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];587;43.44;109.7887;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];588;43.45;109.7842;1.42%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];589;43.41;109.7803;1.40%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];590;43.43;109.7628;1.54%;0.04%
+test 100-samples: 1.48%.
+[epoch,time,train[lb],test[err],valid[err]];591;42.95;109.7449;1.38%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];592;43.37;109.7695;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];593;43.37;109.7838;1.34%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];594;43.32;109.7859;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];595;43.36;109.7453;1.41%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];596;43.38;109.7716;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];597;43.38;109.7533;1.47%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];598;43.39;109.7593;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];599;43.36;109.7581;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];600;43.36;109.6967;1.35%;0.02%
+test 100-samples: 1.25%.
+[epoch,time,train[lb],test[err],valid[err]];601;43.42;109.6502;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];602;43.63;109.6681;1.12%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];603;43.42;109.5830;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];604;43.71;109.6363;1.42%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];605;43.85;109.6235;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];606;43.56;109.6068;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];607;43.80;109.6116;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];608;43.81;109.6607;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];609;43.80;109.5977;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];610;43.82;109.5975;1.20%;0.02%
+test 100-samples: 1.24%.
+[epoch,time,train[lb],test[err],valid[err]];611;43.58;109.6209;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];612;44.01;109.5956;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];613;43.84;109.6340;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];614;43.85;109.6045;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];615;43.82;109.5974;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];616;43.81;109.5882;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];617;43.80;109.6199;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];618;43.79;109.5993;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];619;43.86;109.5922;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];620;43.79;109.6108;1.28%;0.02%
+test 100-samples: 1.22%.
+[epoch,time,train[lb],test[err],valid[err]];621;43.49;109.5923;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];622;43.76;109.5837;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];623;43.81;109.6105;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];624;43.62;109.5733;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];625;43.81;109.5644;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];626;43.83;109.5617;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];627;43.76;109.5436;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];628;43.85;109.5678;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];629;43.85;109.5842;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];630;43.78;109.5681;1.39%;0.02%
+test 100-samples: 1.33%.
+[epoch,time,train[lb],test[err],valid[err]];631;43.57;109.5892;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];632;43.85;109.5629;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];633;43.71;109.6141;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];634;43.81;109.5645;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];635;43.62;109.5679;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];636;43.59;109.5786;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];637;43.84;109.5493;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];638;43.83;109.5526;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];639;43.42;109.5414;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];640;43.78;109.5710;1.29%;0.02%
+test 100-samples: 1.29%.
+[epoch,time,train[lb],test[err],valid[err]];641;43.33;109.5753;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];642;43.56;109.5640;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];643;43.45;109.5567;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];644;43.43;109.5474;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];645;43.43;109.5288;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];646;43.44;109.5560;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];647;43.44;109.5529;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];648;43.42;109.5483;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];649;43.46;109.5062;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];650;43.60;109.5259;1.27%;0.02%
+test 100-samples: 1.25%.
+[epoch,time,train[lb],test[err],valid[err]];651;43.27;109.5131;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];652;43.50;109.5839;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];653;43.47;109.5210;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];654;43.46;109.5288;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];655;43.43;109.5135;1.35%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];656;43.45;109.5350;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];657;43.45;109.5248;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];658;43.47;109.5224;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];659;43.41;109.5208;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];660;43.44;109.5247;1.31%;0.02%
+test 100-samples: 1.32%.
+[epoch,time,train[lb],test[err],valid[err]];661;43.00;109.5596;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];662;43.39;109.5014;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];663;43.36;109.5225;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];664;43.38;109.5203;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];665;43.38;109.5470;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];666;43.38;109.5178;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];667;43.40;109.5545;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];668;43.35;109.5175;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];669;43.34;109.5172;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];670;43.40;109.4800;1.26%;0.02%
+test 100-samples: 1.31%.
+[epoch,time,train[lb],test[err],valid[err]];671;43.15;109.4636;1.54%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];672;43.56;109.4668;1.39%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];673;43.46;109.4919;1.51%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];674;43.46;109.4913;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];675;43.43;109.4827;1.34%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];676;43.52;109.4891;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];677;43.81;109.5010;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];678;43.12;109.5122;1.25%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];679;43.81;109.4875;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];680;43.66;109.4654;1.30%;0.02%
+test 100-samples: 1.33%.
+[epoch,time,train[lb],test[err],valid[err]];681;43.53;109.4580;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];682;43.87;109.4531;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];683;43.84;109.4880;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];684;43.70;109.4888;1.33%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];685;43.77;109.4990;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];686;43.82;109.4532;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];687;43.81;109.4621;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];688;43.83;109.4761;1.33%;0.05%
+[epoch,time,train[lb],test[err],valid[err]];689;43.83;109.4600;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];690;43.85;109.4563;1.38%;0.02%
+test 100-samples: 1.36%.
+[epoch,time,train[lb],test[err],valid[err]];691;43.55;109.4636;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];692;44.16;109.4752;1.19%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];693;43.54;109.4452;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];694;43.83;109.4359;1.25%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];695;43.71;109.4491;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];696;43.82;109.4586;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];697;43.72;109.4494;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];698;43.72;109.4281;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];699;43.46;109.4619;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];700;43.56;109.4082;1.20%;0.02%
+test 100-samples: 1.20%.
+[epoch,time,train[lb],test[err],valid[err]];701;43.25;109.4161;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];702;43.57;109.4402;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];703;43.45;109.4483;1.31%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];704;43.40;109.4170;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];705;43.42;109.4354;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];706;43.50;109.4268;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];707;43.44;109.4376;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];708;43.45;109.4448;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];709;43.43;109.4311;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];710;43.43;109.4406;1.19%;0.03%
+test 100-samples: 1.22%.
+[epoch,time,train[lb],test[err],valid[err]];711;42.91;109.4100;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];712;43.36;109.4463;1.29%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];713;43.39;109.4013;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];714;43.35;109.4111;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];715;43.37;109.4060;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];716;43.39;109.4247;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];717;43.43;109.4007;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];718;43.40;109.3990;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];719;42.55;109.3868;1.37%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];720;42.65;109.4428;1.46%;0.02%
+test 100-samples: 1.40%.
+[epoch,time,train[lb],test[err],valid[err]];721;42.02;109.4259;1.31%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];722;42.45;109.4273;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];723;42.68;109.4156;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];724;43.01;109.4217;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];725;43.05;109.4206;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];726;43.06;109.3823;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];727;43.07;109.3542;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];728;43.15;109.3920;1.41%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];729;43.36;109.3848;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];730;43.39;109.4018;1.22%;0.02%
+test 100-samples: 1.19%.
+[epoch,time,train[lb],test[err],valid[err]];731;43.19;109.3988;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];732;43.06;109.4041;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];733;43.36;109.3411;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];734;43.38;109.4004;1.20%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];735;43.40;109.3876;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];736;43.38;109.3941;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];737;43.38;109.3822;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];738;43.38;109.3944;1.16%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];739;43.39;109.3867;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];740;43.39;109.3929;1.24%;0.02%
+test 100-samples: 1.24%.
+[epoch,time,train[lb],test[err],valid[err]];741;43.19;109.3969;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];742;43.42;109.3653;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];743;43.35;109.3919;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];744;43.51;109.3744;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];745;43.64;109.3744;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];746;43.44;109.3667;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];747;43.68;109.3808;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];748;43.60;109.3796;1.30%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];749;43.78;109.3646;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];750;43.70;109.3637;1.20%;0.02%
+test 100-samples: 1.21%.
+[epoch,time,train[lb],test[err],valid[err]];751;43.75;109.3383;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];752;43.56;109.3370;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];753;43.82;109.3445;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];754;43.59;109.3642;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];755;43.67;109.3703;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];756;43.59;109.3671;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];757;43.77;109.3773;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];758;43.46;109.3656;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];759;43.72;109.3599;1.37%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];760;43.42;109.3699;1.24%;0.02%
+test 100-samples: 1.16%.
+[epoch,time,train[lb],test[err],valid[err]];761;43.25;109.3416;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];762;43.62;109.3624;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];763;43.44;109.3603;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];764;43.45;109.3444;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];765;43.43;109.3309;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];766;43.47;109.3154;1.23%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];767;43.46;109.3365;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];768;43.48;109.3398;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];769;43.45;109.3336;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];770;43.48;109.3418;1.16%;0.02%
+test 100-samples: 1.13%.
+[epoch,time,train[lb],test[err],valid[err]];771;43.33;109.3617;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];772;43.47;109.3268;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];773;43.48;109.3280;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];774;43.44;109.3396;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];775;43.45;109.2989;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];776;43.45;109.3074;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];777;43.51;109.3042;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];778;43.41;109.3465;1.13%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];779;43.50;109.2890;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];780;43.45;109.3438;1.20%;0.02%
+test 100-samples: 1.21%.
+[epoch,time,train[lb],test[err],valid[err]];781;43.09;109.3113;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];782;43.45;109.3067;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];783;43.43;109.3143;1.05%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];784;43.48;109.3286;1.19%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];785;43.40;109.2608;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];786;43.57;109.3065;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];787;43.44;109.3171;1.38%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];788;43.44;109.2965;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];789;43.44;109.3222;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];790;43.47;109.3302;1.37%;0.02%
+test 100-samples: 1.35%.
+[epoch,time,train[lb],test[err],valid[err]];791;43.05;109.3316;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];792;43.44;109.3167;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];793;43.39;109.3138;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];794;43.40;109.3055;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];795;43.43;109.3216;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];796;43.43;109.2934;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];797;43.47;109.2979;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];798;43.89;109.3293;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];799;44.24;109.3126;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];800;43.79;109.2200;1.36%;0.02%
+test 100-samples: 1.26%.
+[epoch,time,train[lb],test[err],valid[err]];801;43.66;109.2485;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];802;44.25;109.2202;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];803;44.16;109.2387;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];804;44.08;109.1895;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];805;44.41;109.1977;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];806;44.24;109.1814;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];807;44.78;109.2440;1.36%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];808;44.45;109.2086;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];809;44.71;109.1810;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];810;44.47;109.1895;1.30%;0.02%
+test 100-samples: 1.26%.
+[epoch,time,train[lb],test[err],valid[err]];811;44.40;109.2007;1.32%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];812;44.24;109.2136;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];813;44.64;109.1935;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];814;45.80;109.1607;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];815;45.55;109.1696;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];816;45.40;109.1527;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];817;45.74;109.2129;1.41%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];818;45.46;109.1946;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];819;45.68;109.1844;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];820;45.61;109.1599;1.23%;0.02%
+test 100-samples: 1.21%.
+[epoch,time,train[lb],test[err],valid[err]];821;45.74;109.1861;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];822;45.65;109.2017;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];823;45.54;109.1709;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];824;45.43;109.1807;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];825;45.41;109.1736;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];826;45.35;109.1907;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];827;45.74;109.1704;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];828;45.47;109.2195;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];829;45.45;109.1894;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];830;45.82;109.1838;1.20%;0.02%
+test 100-samples: 1.22%.
+[epoch,time,train[lb],test[err],valid[err]];831;45.15;109.1700;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];832;45.58;109.1729;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];833;45.72;109.1746;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];834;45.68;109.1826;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];835;45.61;109.1471;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];836;45.54;109.1606;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];837;45.37;109.1802;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];838;45.39;109.1707;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];839;45.19;109.1667;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];840;45.25;109.1481;1.10%;0.02%
+test 100-samples: 1.12%.
+[epoch,time,train[lb],test[err],valid[err]];841;45.01;109.1481;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];842;45.36;109.1719;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];843;45.87;109.1788;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];844;45.33;109.1381;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];845;45.58;109.1424;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];846;45.13;109.1481;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];847;45.70;109.1802;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];848;45.44;109.1851;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];849;45.36;109.1470;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];850;45.54;109.1278;1.30%;0.02%
+test 100-samples: 1.29%.
+[epoch,time,train[lb],test[err],valid[err]];851;45.10;109.1407;1.22%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];852;45.61;109.1554;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];853;45.25;109.1836;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];854;45.54;109.1730;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];855;45.62;109.1346;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];856;45.66;109.1473;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];857;45.29;109.0948;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];858;45.21;109.1197;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];859;45.80;109.1494;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];860;44.94;109.1560;1.24%;0.02%
+test 100-samples: 1.19%.
+[epoch,time,train[lb],test[err],valid[err]];861;45.02;109.1459;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];862;45.82;109.1288;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];863;45.27;109.1512;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];864;45.31;109.1221;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];865;45.38;109.1359;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];866;45.18;109.1203;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];867;45.34;109.1345;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];868;45.14;109.1300;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];869;45.76;109.1012;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];870;45.29;109.1410;1.27%;0.02%
+test 100-samples: 1.19%.
+[epoch,time,train[lb],test[err],valid[err]];871;45.16;109.1460;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];872;45.62;109.1200;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];873;45.57;109.1468;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];874;45.45;109.1326;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];875;45.42;109.1150;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];876;45.52;109.1089;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];877;45.37;109.1283;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];878;45.54;109.1216;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];879;45.30;109.1020;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];880;45.28;109.1203;1.25%;0.02%
+test 100-samples: 1.19%.
+[epoch,time,train[lb],test[err],valid[err]];881;45.50;109.1541;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];882;45.37;109.1049;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];883;45.42;109.1092;1.30%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];884;45.32;109.1230;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];885;45.69;109.1222;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];886;45.53;109.1395;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];887;45.52;109.1340;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];888;45.32;109.1245;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];889;45.26;109.1202;1.04%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];890;45.21;109.1194;1.12%;0.02%
+test 100-samples: 1.12%.
+[epoch,time,train[lb],test[err],valid[err]];891;45.08;109.0931;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];892;45.45;109.1130;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];893;45.22;109.1068;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];894;45.42;109.1222;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];895;45.41;109.0883;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];896;45.55;109.0883;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];897;45.40;109.1234;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];898;45.50;109.1363;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];899;45.66;109.1068;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];900;45.53;109.1469;1.25%;0.02%
+test 100-samples: 1.26%.
+[epoch,time,train[lb],test[err],valid[err]];901;45.09;109.1334;1.29%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];902;45.46;109.1056;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];903;45.32;109.0753;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];904;45.42;109.1199;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];905;45.38;109.1147;1.13%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];906;45.38;109.1019;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];907;45.77;109.0657;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];908;45.61;109.0688;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];909;45.61;109.0964;1.12%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];910;45.77;109.0664;1.20%;0.02%
+test 100-samples: 1.13%.
+[epoch,time,train[lb],test[err],valid[err]];911;44.98;109.1084;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];912;45.47;109.0952;1.24%;0.04%
+[epoch,time,train[lb],test[err],valid[err]];913;45.77;109.1154;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];914;45.55;109.1119;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];915;45.34;109.0949;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];916;45.70;109.0796;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];917;45.41;109.1064;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];918;45.42;109.0634;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];919;45.42;109.0709;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];920;45.61;109.0948;1.14%;0.02%
+test 100-samples: 1.08%.
+[epoch,time,train[lb],test[err],valid[err]];921;45.20;109.0845;1.06%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];922;45.72;109.0884;1.07%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];923;45.54;109.0528;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];924;45.76;109.0350;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];925;45.18;109.1201;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];926;45.68;109.0705;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];927;45.78;109.0996;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];928;45.47;109.0702;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];929;45.78;109.0708;1.10%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];930;45.32;109.0656;1.28%;0.02%
+test 100-samples: 1.21%.
+[epoch,time,train[lb],test[err],valid[err]];931;45.42;109.0702;1.09%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];932;45.54;109.0802;1.13%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];933;45.42;109.0611;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];934;45.27;109.0811;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];935;45.61;109.0544;1.13%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];936;45.62;109.0718;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];937;45.41;109.0967;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];938;45.24;109.0799;1.13%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];939;45.59;109.0884;1.18%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];940;45.78;109.0616;1.14%;0.02%
+test 100-samples: 1.09%.
+[epoch,time,train[lb],test[err],valid[err]];941;45.23;109.0600;1.12%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];942;45.77;109.0616;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];943;45.42;109.0685;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];944;45.33;109.0621;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];945;45.13;109.0776;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];946;45.08;109.0513;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];947;44.07;109.0491;1.28%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];948;44.21;109.0365;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];949;43.91;109.0348;1.11%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];950;43.96;109.0580;1.17%;0.02%
+test 100-samples: 1.19%.
+[epoch,time,train[lb],test[err],valid[err]];951;44.65;109.0544;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];952;45.07;109.0533;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];953;45.29;109.0145;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];954;45.58;109.0575;1.35%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];955;44.99;109.0367;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];956;45.49;109.0451;1.27%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];957;45.31;109.0288;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];958;45.29;109.0341;1.31%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];959;45.45;109.0455;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];960;45.31;109.0281;1.12%;0.02%
+test 100-samples: 1.07%.
+[epoch,time,train[lb],test[err],valid[err]];961;45.03;109.0734;1.09%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];962;44.92;109.0188;1.23%;0.03%
+[epoch,time,train[lb],test[err],valid[err]];963;45.06;109.0247;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];964;45.11;109.0284;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];965;45.53;109.0426;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];966;45.52;109.0324;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];967;45.59;109.0407;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];968;45.67;109.0312;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];969;45.50;109.0354;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];970;45.48;109.0400;1.18%;0.02%
+test 100-samples: 1.13%.
+[epoch,time,train[lb],test[err],valid[err]];971;45.39;109.0191;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];972;45.72;109.0243;1.06%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];973;45.99;109.0377;1.25%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];974;45.85;109.0150;1.14%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];975;45.32;109.0321;1.16%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];976;45.67;109.0315;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];977;45.86;109.0249;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];978;45.67;109.0110;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];979;45.75;109.0286;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];980;46.01;109.0380;1.18%;0.02%
+test 100-samples: 1.17%.
+[epoch,time,train[lb],test[err],valid[err]];981;45.65;109.0140;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];982;45.60;109.0429;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];983;45.75;109.0391;1.26%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];984;45.95;109.0017;1.24%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];985;45.61;108.9864;1.23%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];986;45.77;109.0133;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];987;45.90;109.0528;1.19%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];988;45.46;109.0046;1.21%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];989;45.32;109.0044;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];990;45.65;109.0545;1.18%;0.02%
+test 100-samples: 1.21%.
+[epoch,time,train[lb],test[err],valid[err]];991;45.38;109.0109;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];992;45.62;109.0244;1.04%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];993;45.88;108.9934;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];994;45.74;109.0331;1.22%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];995;45.54;109.0100;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];996;46.31;109.0261;1.20%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];997;45.94;108.9883;1.15%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];998;45.91;108.9874;1.18%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];999;45.82;109.0173;1.17%;0.02%
+[epoch,time,train[lb],test[err],valid[err]];1000;45.87;108.9819;1.20%;0.02%
+test 100-samples: 1.19%.
