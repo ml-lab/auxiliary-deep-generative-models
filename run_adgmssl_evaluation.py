@@ -1,14 +1,9 @@
-__author__ = 'larsmaaloe'
-
 import theano
 from lasagne_extensions.nonlinearities import rectify
 from data_preparation import mnist
 from models import ADGMSSL
-from lasagne_extensions.layers import MergeLayer, Layer, get_output
-from utils import env_paths
-import theano.tensor as T
+from lasagne_extensions.layers import get_output
 import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
 
 

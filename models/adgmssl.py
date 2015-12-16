@@ -1,5 +1,3 @@
-__author__ = 'larsmaaloe'
-
 import theano
 import theano.tensor as T
 from lasagne import init

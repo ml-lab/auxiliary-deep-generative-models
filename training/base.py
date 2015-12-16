@@ -1,20 +1,13 @@
-__author__ = 'larsma'
-
 import logging
 import sys
 import matplotlib
-
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-
 plt.ioff()
 from utils import env_paths as paths
 import seaborn as sns
 import numpy as np
 import cPickle as pkl
-import theano
-import theano.tensor as T
-from theano.tensor.shared_randomstreams import RandomStreams
 
 
 class Train(object):

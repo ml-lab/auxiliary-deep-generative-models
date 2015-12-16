@@ -1,7 +1,4 @@
-__author__ = 'larsma'
-
 import cPickle as pkl
-
 import lasagne
 import numpy as np
 import theano

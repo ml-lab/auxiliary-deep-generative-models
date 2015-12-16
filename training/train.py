@@ -1,10 +1,7 @@
-__author__ = 'larsma'
-
 import numpy as np
 from utils import env_paths as paths
 from base import Train
 import time
-import theano
 
 
 class TrainModel(Train):

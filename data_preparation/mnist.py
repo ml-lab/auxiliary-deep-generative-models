@@ -1,10 +1,9 @@
-__author__ = 'larsma'
-
 import os
 import gzip
 import cPickle
 import numpy as np
 from utils import env_paths
+
 
 def _download():
     """
@@ -35,6 +34,7 @@ def _download():
     f.close()
     return train_set, test_set, valid_set
 
+
 def _pad_targets(xy):
     """
     Pad the targets to be 1hot.
@@ -42,7 +42,7 @@ def _pad_targets(xy):
     :return: The 1hot coded dataset.
     """
     x, y = xy
-    classes = np.max(y)+1
+    classes = np.max(y) + 1
     tmp_data_y = np.zeros((x.shape[0], classes))
     for i, dp in zip(range(len(y)), y):
         r = np.zeros(classes)
@@ -50,6 +50,7 @@ def _pad_targets(xy):
         tmp_data_y[i] = r
     y = tmp_data_y
     return x, y
+
 
 def _create_semi_supervised(xy, n_labeled, rng):
     """
@@ -62,11 +63,11 @@ def _create_semi_supervised(xy, n_labeled, rng):
     x, y = xy
 
     def _split_by_class(x, y, num_classes):
-        result_x = [0]*num_classes
-        result_y = [0]*num_classes
+        result_x = [0] * num_classes
+        result_y = [0] * num_classes
         for i in range(num_classes):
             idx_i = np.where(y == i)[0]
-            result_x[i] = x[:,idx_i]
+            result_x[i] = x[:, idx_i]
             result_y[i] = y[idx_i]
         return result_x, result_y
 
@@ -83,12 +84,12 @@ def _create_semi_supervised(xy, n_labeled, rng):
 
     n_classes = y[0].shape[0]
     if n_labeled % n_classes != 0:
-        raise("n_labeled (wished number of labeled samples) not divisible by n_classes (number of classes)")
-    n_labels_per_class = n_labeled/n_classes
-    x_labeled = [0]*n_classes
-    x_unlabeled = [0]*n_classes
-    y_labeled = [0]*n_classes
-    y_unlabeled = [0]*n_classes
+        raise ("n_labeled (wished number of labeled samples) not divisible by n_classes (number of classes)")
+    n_labels_per_class = n_labeled / n_classes
+    x_labeled = [0] * n_classes
+    x_unlabeled = [0] * n_classes
+    y_labeled = [0] * n_classes
+    y_unlabeled = [0] * n_classes
     for i in range(n_classes):
         idx = range(x[i].shape[1])
         rng.shuffle(idx)
@@ -97,6 +98,7 @@ def _create_semi_supervised(xy, n_labeled, rng):
         x_unlabeled[i] = x[i]
         y_unlabeled[i] = y[i]
     return np.hstack(x_labeled).T, np.hstack(y_labeled).T, np.hstack(x_unlabeled).T, np.hstack(y_unlabeled).T
+
 
 def load_supervised(filter_std=0.1, train_valid_combine=False):
     """
@@ -124,7 +126,9 @@ def load_supervised(filter_std=0.1, train_valid_combine=False):
 
     return train_set, test_set, valid_set
 
-def load_semi_supervised(n_batches=100, n_labeled=100, n_samples=100, filter_std=0.1, seed=123456, train_valid_combine=False):
+
+def load_semi_supervised(n_batches=100, n_labeled=100, n_samples=100, filter_std=0.1, seed=123456,
+                         train_valid_combine=False):
     """
     Load the mnist dataset where only a fraction of data points are labeled. The amount
     of labeled data will be evenly distributed accross classes.
@@ -142,9 +146,9 @@ def load_semi_supervised(n_batches=100, n_labeled=100, n_samples=100, filter_std
         train_set = np.append(train_set[0], valid_set[0], axis=0), np.append(train_set[1], valid_set[1], axis=0)
 
     # number of data points in train set including the replicated labeled data.
-    n = (train_set[0].shape[0])+(n_samples * n_batches)
+    n = (train_set[0].shape[0]) + (n_samples * n_batches)
     # the frequency for the labeled data points to appear in the data set.
-    l_freq = n/n_batches
+    l_freq = n / n_batches
     rng = np.random.RandomState(seed=seed)
 
     # Create the labeled and unlabeled data evenly distributed across classes.
@@ -170,8 +174,8 @@ def load_semi_supervised(n_batches=100, n_labeled=100, n_samples=100, filter_std
                 indices = indices[rng.randint(0, n_labeled, size=n_samples)]
             j = 0
             for idx in indices:
-                col_x[i+j] = x_l[idx]
-                col_y[i+j] = y_l[idx]
+                col_x[i + j] = x_l[idx]
+                col_y[i + j] = y_l[idx]
                 j += 1
             i += n_samples
         else:

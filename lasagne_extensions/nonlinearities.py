@@ -1,5 +1,3 @@
-__author__ = 'larsmaaloe'
-
 from lasagne.nonlinearities import *
 import theano.tensor as T
 

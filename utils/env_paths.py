@@ -1,5 +1,3 @@
-__author__ = 'larsma'
-
 from os.path import join, exists, abspath
 from os import mkdir, listdir
 import time
