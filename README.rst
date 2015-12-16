@@ -42,16 +42,16 @@ Please see the source code and code examples for further details.
 Comparison of the training convergence between the adgmssl, adgmssl with deterministic auxiliary units and the dgmssl.
 
 
-.. image:: https://raw.githubusercontent.com/larsmaaloee/auxiliary-deep-generative-models/master/output/train.png
+.. image:: /output/train.png
 
 
 Showing the information contribution from the auxiliary and the latent units a and z respecively.
 
 
-.. image:: https://raw.githubusercontent.com/larsmaaloee/auxiliary-deep-generative-models/master/output/diff.png
+.. image:: /output/diff.png
 
 
 A random sample from the latent space run through the generative model.
 
 
-.. image:: https://raw.githubusercontent.com/larsmaaloee/auxiliary-deep-generative-models/master/output/mnist.png
+.. image:: /output/mnist.png
